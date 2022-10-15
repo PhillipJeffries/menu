@@ -1,0 +1,13 @@
+python3 -m venv venv 
+source venv/bin/activate
+python -m pip install Django    python -m django --version
+pip freeze > requirements.txt
+
+#creating project
+
+django-admin startproject config . 
+
+python manage.py runserver
+
+
+
