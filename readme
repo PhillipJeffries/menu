@@ -1,24 +1,13 @@
-https://docs.djangoproject.com/en/4.1/intro/tutorial02/
-
-
 python3 -m venv venv 
 source venv/bin/activate
 python -m pip install Django    python -m django --version
-pip freeze > requirements.txt  (after every installing)
+pip freeze > requirements.txt   pip install -r reguirements.txt
 
 #creating project
 
 django-admin startproject config . 
 
 python manage.py runserver
-
-python manage.py startapp menu
-
-python manage.py migrate
-
-python manage.py sqlmigrate <appName> 0001  
-
-python manage.py migrate
 
 
 
