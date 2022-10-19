@@ -1,17 +1,15 @@
-from django.shortcuts import render
+from rest_framework.response import Response
 
-from django.http import HttpResponse
+from rest_framework.views import APIView
 
-from .models import Dish
-
-
-def index(request):
-    return HttpResponse("Why so long?")
-
-def show_dishes(request):
-    dishes = Dish.objects.all()
-    return HttpResponse(dishes)
+from .models import Dish, Drink
 
 
 
-# Create your views here.
+
+class MenuApiView(APIView):
+    def get(self, request):
+        dishes = Dish.objects.all().values()
+        drinks = Drink.objects.all().values()
+        return Response({'menu': {'dishes': dishes, 'drinks': drinks}})
+    
